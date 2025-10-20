@@ -1,14 +1,12 @@
-gcc 4-puts.c
-# include  <stdio.h>
+#include <stdio.h>
 
- /** 
-* main - Point d'entrée 
-* Retour : Toujours 0 (Succès) 
-*/ 
-
-int  main ( void )
- { 
- puts ( "\"Programmer, c'est comme construire un puzzle multilingue" ); 
-
-  return ( 0 ); 
+/**
+ * main - Entry point
+ *
+ * Return: 0 (Success)
+ */
+int main(void)
+{
+    puts("Programming is like building a multilingual puzzle");
+    return (0);
 }
