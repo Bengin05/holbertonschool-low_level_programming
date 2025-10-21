@@ -12,11 +12,10 @@ int main(void)
     int x;
 
     srand(time(0));
-    x = rand - RAND_MAX / 2;
+    x = rand() - RAND_MAX / 2;
 
     printf("%d\n",x);
 
-    /* Our own code will go here */
       if (x > 0)
       {
            printf("The number is positive \n");
@@ -30,6 +29,4 @@ int main(void)
            printf("The number is zero \n");
        }
       return 0;
-}
-
 }
