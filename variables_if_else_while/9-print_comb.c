@@ -1,31 +1,31 @@
 #include <stdio.h>
 
 /**
-* main - Prints all possible combinations of single-digit numbers
-*
-* Return: Always 0 (Success)
-*/
+ * main - Prints all possible combinations of single-digit numbers
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    int i, j;
+	int i = 0;
 
-    for (i =0; i <= 9; i++)
-    {
-        for (j = i+1; j <= 9; j++)
-        {
-            putchar(i + '0');
-            putchar(',');
-            putchar(' ');
-            putchar(j + '0');
-            if (!(i ==8 && j == 9))
-            {
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
-    putchar('\n');
+	while (i < 89)
+	{
+		int first = i / 10;
+		int second = i % 10;
 
-    return (0);
-
+		if (first < second)
+		{
+			putchar(first + '0');
+			putchar(second + '0');
+			if (!(first == 8 && second == 9))
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		}
+		i++;
+	}
+	putchar('\n');
+	return (0);
 }
