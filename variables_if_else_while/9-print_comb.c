@@ -7,24 +7,23 @@
  */
 int main(void)
 {
-	int i = 0;
+    int i, j;
 
-	while (i < 89)
-	{
-		int first = i / 10;
-		int second = i % 10;
+    for (i = 0; i <= 8; i++)
+    {
+        for (j = i + 1; j <= 9; j++)
+        {
+            putchar(i + '0');
+            putchar(j + '0');
 
-		if (first < second)
-		{
-			putchar(first + '0');
-			putchar(second + '0');
-			if (!(first == 8 && second == 9))
-			{
-				putchar(','); putchar(' ');
-			}
-		}
-		i++;
-	}
-	putchar('\n');
-	return (0);
+            if (!(i == 8 && j == 9))
+            {
+                putchar(',');
+                putchar(' ');
+            }
+        }
+    }
+    putchar('\n');
+
+    return (0);
 }
