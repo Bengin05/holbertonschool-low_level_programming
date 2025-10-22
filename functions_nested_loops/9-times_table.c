@@ -2,23 +2,19 @@
 #include "main.h"
 
 /**
-* times_table - Prints the 9 times table, starting from 0
+*
 */
 void times_table(void)
 {
-    int i;
+    int n, i;
 
-    for (i = 0; i <= 9; i++)
-    {
-        putnbr(i);
-        putchar_custom(' ');
-        putchar_custom('x');
-        putchar_custom(' ');
-        putnbr(9);
-        putchar_custom(' ');
-        putchar_custom('=');
-        putchar_custom(' ');
-        putnbr(i * 9);
-        putchar_custom('\n');
-    }
+    _putchar(" i = '9' :\n");
+    scanf("'%d'", &n);
+
+    _putchar("\n '%d:'\n", n);
+
+    for (i = 1; i <= 10; i++)
+        _putchar("%d x %d = %d\n", n, i, n * i);
+
+    return 0;
 }
