@@ -4,18 +4,15 @@
 /**
 * main - Prints the alphabet, in lowercase followed by a new line
 *
-* Return: Always 0 (Success)
+* Return: void
 */
 void print_alphabet(void);
 {
-    char letter = 'a';
+    char c;
 
-	while (letter <= 'z')
+	for (c = 'a'; c <= 'z', c++)
 	{
-		putchar(letter);
-		letter++;
+		_putchar(c);
 	}
-	putchar('\n');
-
-	return (0);
+	_putchar('\n');
 }
