@@ -1,4 +1,4 @@
-#include "main.h"
+#ifndef MAIN_H
 
 /**
  * main - check the code
