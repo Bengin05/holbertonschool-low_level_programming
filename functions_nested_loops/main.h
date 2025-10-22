@@ -1,4 +1,5 @@
 #ifndef MAIN_H
+#endif
 
 /**
  * main - check the code
