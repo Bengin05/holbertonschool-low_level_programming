@@ -10,7 +10,7 @@
  *
  * Return: void
  */
- void print_square(int size)
+void print_square(int size)
 {
 	int i;
 	int j;
