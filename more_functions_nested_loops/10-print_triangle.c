@@ -11,7 +11,7 @@
  * Return: void
  */
  void print_triangle(int size)
- {
+{
 	int i;
 	int j;
 	int k;
@@ -21,7 +21,8 @@
 		_putchar('\n');
 		return;
 	}
-	else{
+	else
+	{
 		for (i = 1; i <= size; i++)
 		{
 			for (j = size - i; j > 0; j--)
@@ -35,4 +36,4 @@
 			_putchar('\n');
 		}
 	}
- }
+}
