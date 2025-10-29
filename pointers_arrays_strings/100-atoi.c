@@ -14,7 +14,7 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int sign = 1;
-	unsigned int result = 0; /* on utilise unsigned pour éviter l'overflow signé */
+	unsigned int result = 0;
 	int started = 0;
 
 	while (s[i] != '\0')
