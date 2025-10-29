@@ -8,7 +8,8 @@
  * Description: prend en compte tous les signes '+' et '-' avant le nombre.
  * Si aucun chiffre n'est présent dans la chaîne, la fonction renvoie 0.
  *
- * Return: l'entier obtenu à partir de la chaîne, ou 0 si aucun chiffre trouvé
+ * Return: l'entier obtenu à partir de la chaîne, ou 0 si aucun chiffre
+ *			trouvé
  */
 int _atoi(char *s)
 {
