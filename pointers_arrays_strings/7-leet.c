@@ -13,9 +13,10 @@
  *
  * You can only use one if in your code
  * You can only use two loops in your code
- * You are not allowed to use switch
+ * You are not allowed to use the 'switch' statement
  * You are not allowed to use any ternary operation
  */
+
 char *leet(char *str)
 {
 	int i = 0, j;
