@@ -16,21 +16,24 @@
  * You are not allowed to use switch
  * You are not allowed to use any ternary operation
  */
-char *leet(char *s)
+char *leet(char *str)
 {
-	int i, j;
+	int i = 0, j;
 	char letters[] = "aAeEoOtTlL";
 	char numbers[] = "4433007711";
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (str[i] != '\0')
 	{
-		for (j = 0; letters[j] != '\0'; j++)
+		j = 0;
+		while (letters[j] != '\0')
 		{
-			if (s[i] == letters[j])
+			if (str[i] == letters[j])
 			{
-				s[i] = numbers[j];
+				str[i] = numbers[j];
 			}
+			j++;
 		}
+		i++;
 	}
-	return (s);
+	return (str);
 }
