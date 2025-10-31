@@ -13,7 +13,7 @@
  *
  * You can only use one if in your code
  * You can only use two loops in your code
- * You are not allowed to use the 'switch' statement
+ * The use of case-selection statements is not allowed
  * You are not allowed to use any ternary operation
  */
 
