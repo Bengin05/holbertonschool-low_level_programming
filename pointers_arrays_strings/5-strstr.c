@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stddef.h>
 
-/*
+/**
  * _strstr - localise la première occurrence de la sous-chaîne 'needle'
  *            dans la chaîne 'haystack'
  * @haystack: la chaîne dans laquelle effectuer la recherche
