@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * _strchr - localise un caractère dans une chaîne de caractères
@@ -10,10 +11,17 @@
  */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	char *p = s;
+
+	while (*p != '\0')
 	{
-		if (*s == c)
-		s++;
+		if (*p == c)
+			return p;
+		p++;
 	}
-	return s;
+
+	if (*p == c)
+		return p;
+
+	return NULL;
 }
