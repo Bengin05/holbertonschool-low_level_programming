@@ -4,6 +4,7 @@
 int _putchar(char c);
 void print_name_recursively(char *s);
 void print_number(int n);
-int main(int argc, char *argv[]);
+void print_string(char *s);
+void print_arguments(int argc, char *argv[], int index);
 
 #endif
