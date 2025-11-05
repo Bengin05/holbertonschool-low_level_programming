@@ -3,5 +3,6 @@
 
 int _putchar(char c);
 void print_name_recursively(char *s);
+void print_number(int n);
 
 #endif
