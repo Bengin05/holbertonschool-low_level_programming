@@ -8,5 +8,6 @@ void print_string(char *s);
 void print_arguments(int argc, char *argv[], int index);
 int _atoi(char *s);
 int main(int argc, char *argv[]);
+void print_number(int n);
 
 #endif
