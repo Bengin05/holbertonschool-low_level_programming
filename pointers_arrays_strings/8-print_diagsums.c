@@ -4,7 +4,8 @@
 /**
  * print_diagsums - Affiche la somme des deux diagonales principales
  *                  d'une matrice carrée d'entiers.
- * @a: Pointeur vers le premier élément de la matrice (traitée comme un int *).
+ * @a: Pointeur vers le premier élément de la matrice
+ *		(traitée comme un int *).
  * @size: Taille (nombre de lignes et de colonnes) de la matrice carrée.
  *
  * Return: Rien.
