@@ -6,7 +6,7 @@
  *					suivie d'un saut de ligne
  * @s: pointeur vers la chaîne à afficher
  *
- * Cette fonction utilise la récursion pour parcourir la chaîne de caractères
+ * Cette fonction utilise la récursion pour parcourir la chaîne de caractère
  * Jusqu’à la fin ('\0').
  * À chaque appel, elle affiche le caractère courant.
  * Quand le caractère nul est atteint,
