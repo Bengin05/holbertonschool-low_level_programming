@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_diagsums - Affiche la somme des deux diagonales principales
+ * print_diagsums - Affiche la somme des deux diagonale principal
  *                  d'une matrice carrée d'entiers.
  * @a: Pointeur vers le premier élément de la matrice
  *		(traitée comme un int *).
