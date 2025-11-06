@@ -9,28 +9,34 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	int i, sum = 0;
 
-	if (argc != 3)
+	if (argc == 1)
 	{
-		char *msg = "Error\n";
-		int i = 0;
-
-		while (msg[i])
-		{
-			_putchar(msg[i]);
-			i++;
-		}
-		return (1);
+		_putchar('0');
+		_putchar('\n');
+		return (0);
 	}
 
-	num1 = _atoi(argv[1]);
-	num2 = _atoi(argv[2]);
-	result = num1 + num2;
+	for (i = 1; i < argc; i++)
+	{
+		if (!is_digit(argv[i]))
+		{
+			char *msg = "Error\n";
+			int j = 0;
 
-	print_number(result);
+			while (msg[j])
+			{
+				_putchar(msg[j]);
+				j++;
+			}
+			return (1);
+		}
+		sum += _atoi(argv[i]);
+	}
+
+	print_number(sum);
 	_putchar('\n');
-
 	return (0);
 }
 
@@ -42,13 +48,7 @@ int main(int argc, char *argv[])
  */
 int _atoi(char *s)
 {
-	int sign = 1, num = 0;
-
-	if (*s == '-')
-	{
-		sign = -1;
-		s++;
-	}
+	int num = 0;
 
 	while (*s)
 	{
@@ -56,7 +56,7 @@ int _atoi(char *s)
 		s++;
 	}
 
-	return (num * sign);
+	return (num);
 }
 
 /**
@@ -67,17 +67,19 @@ int _atoi(char *s)
  */
 int is_digit(char *s)
 {
-	if (*s == '\0')
-	{
-		return (1);
-	}
+	int i = 0;
 
-	if (*s < '0' || *s > '9')
-	{
+	if (s[0] == '\0')
 		return (0);
+
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
 	}
 
-	return (is_digit(s + 1));
+	return (1);
 }
 
 /**
@@ -88,12 +90,6 @@ int is_digit(char *s)
  */
 void print_number(int n)
 {
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-
 	if (n / 10)
 		print_number(n / 10);
 
