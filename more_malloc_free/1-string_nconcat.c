@@ -12,7 +12,7 @@
  * Description :
  * Cette fonction alloue dynamiquement un nouvel espace mémoire contenant :
  * - Tous les caractères de s1
- * - Suivis des n premiers caractères de s2 (ou de toute s2 si n >= longueur de s2)
+ * - Suivis des n premiers caractères de s2
  * - Et terminés par le caractère nul '\0'.
  *
  * Si s1 ou s2 vaut NULL, ils sont traités comme des chaînes vides.
