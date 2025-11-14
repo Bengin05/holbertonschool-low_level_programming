@@ -3,9 +3,9 @@
 
 /**
  * struct dog - structure representing a dog
- * @name: Pointer to dog's name
- * @age: Age of the dog
- * @owner: Pointer to dog's owner
+ * @name: type char *
+ * @age: type float
+ * @owner: type char *
  */
 struct dog
 {
