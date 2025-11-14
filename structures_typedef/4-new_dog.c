@@ -1,56 +1,87 @@
-#include <stdlib.h>
 #include "dog.h"
+#include <stdlib.h>
 
 /**
- * new_dog - crée un nouveau chien
- * @name: nom du chien
- * @age: âge du chien
- * @owner: propriétaire du chien
+ * _strlen - returns the length of a string
+ * @s: string
+ * Return: length
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	if (!s)
+		return (0);
+
+	while (s[i])
+		i++;
+	return (i);
+}
+
+/**
+ * _strcpy - copies a string from src to dest
+ * @dest: destination
+ * @src: source
+ * Return: pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	if (!dest || !src)
+		return (NULL);
+
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+/**
+ * new_dog - creates a new dog
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
  *
- * Return: pointeur vers un nouveau dog_t, ou NULL si échec
+ * Return: pointer to the new dog, or NULL on failure
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog;
-	int i, len_name = 0, len_owner = 0;
+	dog_t *d;
+	int len_name, len_owner;
 
-	if (name == NULL || owner == NULL)
+	if (!name || !owner)
 		return (NULL);
 
-	while (name[len_name])
-		len_name++;
-
-	while (owner[len_owner])
-		len_owner++;
-
-	dog = malloc(sizeof(dog_t));
-	if (dog == NULL)
+	d = malloc(sizeof(dog_t));
+	if (!d)
 		return (NULL);
 
-	dog->name = malloc(len_name + 1);
-	if (dog->name == NULL)
+	len_name = _strlen(name);
+	len_owner = _strlen(owner);
+
+	d->name = malloc(len_name + 1);
+	if (!d->name)
 	{
-		free(dog);
+		free(d);
 		return (NULL);
 	}
 
-	for (i = 0; i < len_name; i++)
-		dog->name[i] = name[i];
-	dog->name[i] = '\0';
-
-	dog->owner = malloc(len_owner + 1);
-	if (dog->owner == NULL)
+	d->owner = malloc(len_owner + 1);
+	if (!d->owner)
 	{
-		free(dog->name);
-		free(dog);
+		free(d->name);
+		free(d);
 		return (NULL);
 	}
 
-	for (i = 0; i < len_owner; i++)
-		dog->owner[i] = owner[i];
-	dog->owner[i] = '\0';
+	_strcpy(d->name, name);
+	_strcpy(d->owner, owner);
+	d->age = age;
 
-	dog->age = age;
-
-	return (dog);
+	return (d);
 }
