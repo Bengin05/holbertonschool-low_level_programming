@@ -1,11 +1,15 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 
+/**
+ * print_all - prints anything
+ * @format: types (c, i, f, s)
+ */
 void print_all(const char * const format, ...)
 {
     va_list args;
-    int i = 0, printed = 0;
-    char *s;
+    int i = 0, first = 1;
+    char *str;
 
     va_start(args, format);
 
@@ -14,27 +18,32 @@ void print_all(const char * const format, ...)
         if (format[i] == 'c' || format[i] == 'i' ||
             format[i] == 'f' || format[i] == 's')
         {
-            if (printed)
+            if (!first)
                 printf(", ");
 
             if (format[i] == 'c')
                 printf("%c", va_arg(args, int));
+
             if (format[i] == 'i')
                 printf("%d", va_arg(args, int));
+
             if (format[i] == 'f')
                 printf("%f", va_arg(args, double));
+
             if (format[i] == 's')
             {
-                s = va_arg(args, char *);
-                if (!s)
+                str = va_arg(args, char *);
+                if (str == NULL)
                     printf("(nil)");
-                if (s)
-                    printf("%s", s);
+                if (str != NULL)
+                    printf("%s", str);
             }
-            printed = 1;
+
+            first = 0;
         }
         i++;
     }
-    va_end(args);
+
     printf("\n");
+    va_end(args);
 }
