@@ -2,65 +2,42 @@
 #include <stdio.h>
 
 /**
- * print_all - Affiche une série de valeurs de types variés
- * @format: Liste de caractères indiquant les types : c, i, f, s
- *
- * Description: La fonction affiche les arguments selon le format donné.
- * Types supportés:
- * c -> char, i -> int, f -> float, s -> string (NULL affiche (nil))
- * Tout autre caractère est ignoré.
+ * print_all - prints anything according to a format
+ * @format: list of types of arguments (c, i, f, s)
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0;
-	int first = 1;
+	int i = 0, first = 1;
 	char *s;
-	char c;
-	int d;
-	double f;
 
 	va_start(args, format);
 
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
-	if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's')
+		if (format[i] == 'c' || format[i] == 'i' ||
+			format[i] == 'f' || format[i] == 's')
 		{
 			if (!first)
 				printf(", ");
-
 			if (format[i] == 'c')
-			{
-				c = va_arg(args, int);
-				printf("%c", c);
-			}
-
+				printf("%c", va_arg(args, int));
 			if (format[i] == 'i')
-			{
-				d = va_arg(args, int);
-				printf("%d", d);
-			}
-
+				printf("%d", va_arg(args, int));
 			if (format[i] == 'f')
-			{
-				f = va_arg(args, double);
-				printf("%f", f);
-			}
-
+				printf("%f", va_arg(args, double));
 			if (format[i] == 's')
 			{
 				s = va_arg(args, char *);
-				if (s == NULL)
-					printf("(nil)");
-				else
+				if (s)
 					printf("%s", s);
+				if (!s)
+					printf("(nil)");
 			}
-
 			first = 0;
 		}
 		i++;
 	}
-
 	printf("\n");
 	va_end(args);
 }
