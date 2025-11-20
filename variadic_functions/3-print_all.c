@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
- * print_all - prints anything according to a format
- * @format: list of types of arguments (c, i, f, s)
+ * print_all - prints anything
+ * @format: types (c, i, f, s)
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
 	int i = 0, first = 1;
-	char *s;
+	char *str;
 
 	va_start(args, format);
 
@@ -20,19 +20,23 @@ void print_all(const char * const format, ...)
 		{
 			if (!first)
 				printf(", ");
+
 			if (format[i] == 'c')
 				printf("%c", va_arg(args, int));
+
 			if (format[i] == 'i')
 				printf("%d", va_arg(args, int));
+
 			if (format[i] == 'f')
 				printf("%f", va_arg(args, double));
+
 			if (format[i] == 's')
 			{
-				s = va_arg(args, char *);
-				if (s)
-					printf("%s", s);
-				if (!s)
+				str = va_arg(args, char *);
+				if (str == NULL)
 					printf("(nil)");
+				if (str != NULL)
+					printf("%s", str);
 			}
 			first = 0;
 		}
