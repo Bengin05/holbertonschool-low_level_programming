@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * list_len - renvoie le nombre d'éléments dans une liste chaînée
+ * list_len - renvoie le nombre d'éléments 
+ *			  dans une liste chaînée
  * @h: pointeur vers le premier élément de la liste
  *
  * Retour: le nombre de nœuds dans la liste
