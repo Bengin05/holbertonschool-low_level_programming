@@ -1,13 +1,13 @@
-#include <stdlib.h>
 #include "lists.h"
 
 /**
- * free_list - libère tous les éléments d'une liste chaînée
- * @head: pointeur vers le premier élément de la liste
+ * free_list - Frees a list_t list
+ * @head: Pointer to the head of the list
  *
- * La fonction libère la mémoire allouée pour chaque nœud
- * pour les chaînes de caractères.
+ * Description: Frees all the nodes of a singly linked list,
+ * including the duplicated strings inside each node.
  */
+
 void free_list(list_t *head)
 {
 	list_t *temp;
@@ -15,7 +15,7 @@ void free_list(list_t *head)
 	while (head != NULL)
 	{
 		temp = head->next;
-		free(head->next);
+		free(head->str);
 		free(head);
 		head = temp;
 	}
