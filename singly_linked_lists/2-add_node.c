@@ -1,14 +1,14 @@
 #include "lists.h"
+#include <string.h>
 
 /**
- * add_node - ajoute un nouveau nœud au début d'une liste chaînée
- * @head: double pointeur vers le premier élément de la liste
- * @str: chaîne de caractères à copier dans le nouveau nœud
+ * add_node - Adds a new node at the beginning of a list_t list
+ * @head: Double pointer to the head of the list
+ * @str: String to duplicate and store in the new node
  *
- * Retour: l'adresse du nouveau nœud, ou NULL si l'allocation échoue
- *
- * La chaîne @str doit être dupliquée avec strdup.
+ * Return: The address of the new element, or NULL if it failed
  */
+
 list_t *add_node(list_t **head, const char *str)
 {
 	size_t count = 0;
@@ -16,8 +16,8 @@ list_t *add_node(list_t **head, const char *str)
 
 	new = malloc(sizeof(list_t));
 
-	if (new	== NULL)
-		return (NULL)
+	if (new == NULL)
+	return (NULL);
 
 	new->str = strdup(str);
 
@@ -29,10 +29,11 @@ list_t *add_node(list_t **head, const char *str)
 
 	while (str[count] != '\0')
 		count++;
-	
-	new->len = *head;
+
+	new->len = count;
+
+	new->next = *head;
 	*head = new;
 
 	return (new);
 }
-
