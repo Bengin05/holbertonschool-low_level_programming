@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * list_len - renvoie le nombre d'éléments
- *			  dans une liste chaînée
- * @h: pointeur vers le premier élément de la liste
+ * list_len - Returns the number of elements in a linked list_t list
+ * @h: Pointer to the head of the list
  *
- * Retour: le nombre de nœuds dans la liste
+ * Return: The number of nodes in the list
  */
+
 size_t list_len(const list_t *h)
 {
 	size_t count = 0;
