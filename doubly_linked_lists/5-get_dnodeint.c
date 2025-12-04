@@ -8,7 +8,7 @@
  * @index: index of the node to retrieve, starting from 0
  *
  * Return: pointer to the node at the given index,
- * 		   or NULL if it does not exist
+ *         or NULL if it does not exist
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
