@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <stdio.h>
 
 /**
  * hash_table_print - prints a hash table
@@ -28,10 +29,11 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			if (!first)
 				printf(", ");
-			printf("'%s' : '%s'", current->key, current->value);
+			printf("'%s': '%s'", current->key, current->value);
 			first = 0;
 			current = current->next;
 		}
 	}
+
 	printf("}\n");
 }
